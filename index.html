@@ -36,6 +36,10 @@
 	font-size: 2em;
 	overflow: hidden;
 }
+#cm-label:before {
+	content: 'cm';
+	position: absolute;
+}
 #cm-label div {
 	width: 103px;
 	display: inline-block;
@@ -46,6 +50,10 @@
 	height: 1em;
 	font-size: 2em;
 	overflow: hidden;
+}
+#in-label:before {
+	content: 'inch';
+	position: absolute;
 }
 #in-label div {
 	width: 261px;
@@ -81,7 +89,7 @@ body {
 	<h1>Ruler App</h1>
 	<h2>Adjust the slider to match the height of any plastic card</h2>
 	<div style="float: left; padding: 0 2em">
-		<input type="range" min="0" max="100" step=".5" value="100" data-orientation="vertical" style="margin: 0 auto">
+		<input type="range" min="0" max="100" step=".5" value="75" data-orientation="vertical" style="margin: 0 auto">
 	</div>
 	<div style="float: left;width: 6em;">
 		<div id="calibration" style="float: left;">
@@ -136,7 +144,7 @@ $('input[type="range"]').rangeslider({
 
     // Callback function
     onInit: function() {
-    	var value = 100;
+    	var value = 75;
     	document.getElementById('calibration').style['zoom'] = (150 - value) + '%';
     	document.getElementById('ruler').style['zoom'] = ((150 - value) * 50 / 103)  + '%';
     },
