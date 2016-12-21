@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="canonical" href="./index.html" />
+	<title>Ruler App - Online inch and centimeter ruler on your screen</title>
+	<meta name="description" content="Ruler App shows an accurate ruler on your screen. It lets you measure in both centimeters and inches." />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/rangeslider.js/2.3.0/rangeslider.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rangeslider.js/2.3.0/rangeslider.css" />
+<style>
+
+#ruler {
+	overflow-x: hidden;
+}
+#in {
+	background-image: url('inch.svg');
+	background-repeat: repeat-x;
+	width: 100%;
+	height: 130.35px;
+	border: 2px solid black;
+	border-top: 0;
+}
+#cm {
+	background-image: url('cm.svg');
+	background-repeat: repeat-x;
+	width: 100%;
+	height: 102.7px;
+	border: 2px solid black;
+	border-bottom: 0;
+}
+
+#cm-label {
+	height: 1em;
+	font-size: 2em;
+	overflow: hidden;
+}
+#cm-label div {
+	width: 103px;
+	display: inline-block;
+	text-align: right;
+}
+
+#in-label {
+	height: 1em;
+	font-size: 2em;
+	overflow: hidden;
+}
+#in-label div {
+	width: 261px;
+	display: inline-block;
+	padding: 0;
+	margin: 0;
+	text-align: right;
+}
+
+#calibration {
+	width: 428.0px;
+	height: 269.9px;
+	background-color: black;
+	border-radius: 20px;
+	position: relative;
+}
+
+body {
+	font-family: monospace;
+}
+#wrapper {
+	padding: 1em;
+	overflow-x: hidden
+}
+
+</style>
+</head>
+<body>
+<div id="wrapper">
+	<h1>Ruler App</h1>
+	<h2>Match the height of a plastic card using the slider below</h2>
+	<div style="float: left; padding: 0 2em">
+		<input type="range" min="0" max="100" step=".5" value="50" data-orientation="vertical" style="margin: 0 auto">
+	</div>
+	<div style="float: left; width: 1em">
+		<div id="calibration" style="float: left">
+			<div style="position: absolute; bottom: 0; padding: 1em; font-size: 1.5em; color: white">⇦ landscape card ⇨</div>
+		</div>
+	</div>
+	<div style="float: none; clear: both">&nbsp;</div>
+	<h2>Once calibrated, the ruler below will be the correct size</h2>
+</div>
+<div id="ruler">
+	<div id="cm-label"></div>
+	<div id="cm"></div>
+	<div id="in"></div>
+	<div id="in-label"></div>
+</div>
+<script>
+document.getElementById('cm-label').innerHTML = (function() {
+	var str = '';
+	for (var i = 1; i < 100; i++) {
+		str += '<div>'+i+'</div>';
+	}
+	return str;
+})();
+
+document.getElementById('in-label').innerHTML = (function() {
+	var str = '';
+	for (var i = 1; i < 100; i++) {
+		str += '<div>'+i+'</div>';
+	}
+	return str;
+})();
+    // Initialize a new plugin instance for all
+    // e.g. $('input[type="range"]') elements.
+$('input[type="range"]').rangeslider({
+
+    // Feature detection the default is `true`.
+    // Set this to `false` if you want to use
+    // the polyfill also in Browsers which support
+    // the native <input type="range"> element.
+    polyfill: false,
+
+    // Default CSS classes
+    rangeClass: 'rangeslider',
+    disabledClass: 'rangeslider--disabled',
+    horizontalClass: 'rangeslider--horizontal',
+    verticalClass: 'rangeslider--vertical',
+    fillClass: 'rangeslider__fikll',
+    handleClass: 'rangeslider__handle',
+
+    // Callback function
+    onInit: function() {
+    	var value = 50;
+    	document.getElementById('calibration').style['zoom'] = (150 - value) + '%';
+    	document.getElementById('ruler').style['zoom'] = ((150 - value) * 50 / 103)  + '%';
+    },
+
+    // Callback function
+    onSlide: function(position, value) {
+    	// scalar factor for representing 269.9px as 5.398cm // 50px/cm
+    	// scalar factor for representing 103px as 1cm
+    	console.log(value);
+    	document.getElementById('calibration').style['zoom'] = (150 - value) + '%';
+    	document.getElementById('ruler').style['zoom'] = ((150 - value) * 50 / 103)  + '%';
+    },
+
+    // Callback function
+    onSlideEnd: function(position, value) {}
+});
+
+</script>
+</body>
+</html>

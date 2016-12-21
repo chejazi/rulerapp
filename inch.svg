@@ -1,0 +1,22 @@
+<svg width="261" height="130.35" xmlns="http://www.w3.org/2000/svg">
+ <title>Inch</title>
+ <desc>1in for a webruler</desc>
+ <g xmlns="http://www.w3.org/2000/svg" stroke="#000000">
+  <polyline points="260.5,0 260.5,130.35"/>
+  <polyline points="130.25,32.662 130.25,130.35"/>
+  <polyline points="65.125,65.225 65.125,130.35"/>
+  <polyline points="195.375,65.225 195.375,130.35"/>
+  <polyline points="32.5625,81.506 32.5625,130.35"/>
+  <polyline points="97.6875,81.506 97.6875,130.35"/>
+  <polyline points="227.938,81.506 227.938,130.35"/>
+  <polyline points="162.812,81.506 162.812,130.35"/>
+  <polyline points="16.2812,105.928 16.2812,130.35"/>
+  <polyline points="48.8438,105.928 48.8438,130.35"/>
+  <polyline points="113.969,105.928 113.969,130.35"/>
+  <polyline points="81.4062,105.928 81.4062,130.35"/>
+  <polyline points="244.219,105.928 244.219,130.35"/>
+  <polyline points="211.656,105.928 211.656,130.35"/>
+  <polyline points="179.094,105.928 179.094,130.35"/>
+  <polyline points="146.531,105.928 146.531,130.35"/>
+ </g>
+</svg>

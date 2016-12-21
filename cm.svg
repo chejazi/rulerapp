@@ -1,0 +1,16 @@
+<svg width="103" height="102.7" xmlns="http://www.w3.org/2000/svg">
+ <title>Centimeter</title>
+ <desc>1cm for a webruler</desc>
+ <g xmlns="http://www.w3.org/2000/svg" stroke="#000000">
+  <polyline points="102.559,101.438 102.559,0"/>
+  <polyline points="41.0235,28.172 41.0235,0"/>
+  <polyline points="51.2794,52.594 51.2794,0"/>
+  <polyline points="30.7677,28.172 30.7677,0"/>
+  <polyline points="20.5118,28.172 20.5118,0"/>
+  <polyline points="10.2559,28.172 10.2559,0"/>
+  <polyline points="92.303,28.172 92.303,0"/>
+  <polyline points="82.0471,28.172 82.0471,0"/>
+  <polyline points="71.7912,28.172 71.7912,0"/>
+  <polyline points="61.5353,28.172 61.5353,0"/>
+ </g>
+</svg>
